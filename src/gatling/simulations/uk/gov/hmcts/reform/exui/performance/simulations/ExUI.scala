@@ -37,21 +37,21 @@ class ExUI extends Simulation {
 	val EXUIScn = scenario("EXUI").repeat(1)
 	 {
 		exec(
-		/*S2SHelper.S2SAuthToken,
+		//S2SHelper.S2SAuthToken,
 		ExUI.createSuperUser,
 		ExUI.createOrg,
       ExUI.approveOrgHomePage,
 		ExUI.approveOrganisationlogin,
 			ExUI.approveOrganisationApprove,
-			ExUI.approveOrganisationLogout*/
-			ExUI.manageOrgHomePage,
+			ExUI.approveOrganisationLogout
+			/*ExUI.manageOrgHomePage,
 			ExUI.manageOrganisationLogin,
 			ExUI.usersPage,
 			ExUI.inviteUserPage
-			.repeat(4,"n") {
+			.repeat(5,"n") {
 				exec(ExUI.sendInvitation)
 				},
-			ExUI.manageOrganisationLogout
+			ExUI.manageOrganisationLogout*/
 			)
 	 }
 
@@ -82,10 +82,14 @@ class ExUI extends Simulation {
 		.exec(EXUIMCLogin.manageOrg_Logout)
 	}
 
-	setUp(
+	/*setUp(
 		EXUIMCaseCaseworkerScn.inject(nothingFor(5),rampUsers(10) during (300)),
 		EXUIFinancialRemedyScn.inject(nothingFor(15),rampUsers(1) during (300))
-	).protocols(FRhttpProtocol)
+	).protocols(FRhttpProtocol)*/
+
+	setUp(
+		EXUIScn.inject(rampUsers(1) during (10))
+	).protocols(XUIHttpProtocol)
 
 	/*setUp(
 		//EXUIMCaseCreationDivorceScn.inject(nothingFor(5),rampUsers(1) during (3))
