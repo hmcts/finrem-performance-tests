@@ -82,14 +82,14 @@ class ExUI extends Simulation {
 		.exec(EXUIMCLogin.manageOrg_Logout)
 	}
 
-	/*setUp(
-		EXUIMCaseCaseworkerScn.inject(nothingFor(5),rampUsers(10) during (300)),
-		EXUIFinancialRemedyScn.inject(nothingFor(15),rampUsers(1) during (300))
-	).protocols(FRhttpProtocol)*/
-
 	setUp(
+		//EXUIMCaseCaseworkerScn.inject(rampUsers(1) during (10)),
+		EXUIFinancialRemedyScn.inject(rampUsers(1) during (10))
+	).protocols(FRhttpProtocol)
+
+	/*setUp(
 		EXUIScn.inject(rampUsers(1) during (10))
-	).protocols(XUIHttpProtocol)
+	).protocols(XUIHttpProtocol)*/
 
 	/*setUp(
 		//EXUIMCaseCreationDivorceScn.inject(nothingFor(5),rampUsers(1) during (3))
