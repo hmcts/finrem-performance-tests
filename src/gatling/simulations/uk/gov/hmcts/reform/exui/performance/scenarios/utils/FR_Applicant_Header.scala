@@ -51,7 +51,7 @@ object FR_Applicant_Header {
     "sec-ch-ua" -> """Chromium";v="86", "\"Not\\A;Brand";v="99", "Google Chrome";v="86""",
     "sec-ch-ua-mobile" -> "?0",
     "x-dtpc" -> "3$259808026_422h11vQEGKFHUHMIDPKBQASVVNRMPKURVRUITM-0e17",
-    "x-dtreferer" -> "${baseURL}/cases/case-filter")
+    "x-dtreferer" -> s"${baseURL}/cases/case-filter")
 
   val headers_10 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8",

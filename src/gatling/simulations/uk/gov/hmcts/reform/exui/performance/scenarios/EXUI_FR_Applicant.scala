@@ -18,13 +18,12 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_040_005_CreateCaseEvent")
-			.get("/data/internal/case-types/FinancialRemedyConsentedRespondent/event-triggers/FR_solicitorCreate?ignore-warning=false")
+			.get("/data/internal/case-types/FinancialRemedyMVP2/event-triggers/FR_solicitorCreate?ignore-warning=false")
 			.headers(headers_6)
 			.check(status in (200,304)))
 
-
 		.exec(http("XUI${service}_040_010_CreateCaseEvent2")
-			.get("/data/internal/case-types/FinancialRemedyConsentedRespondent/event-triggers/FR_solicitorCreate?ignore-warning=false")
+			.get("/data/internal/case-types/FinancialRemedyMVP2/event-triggers/FR_solicitorCreate?ignore-warning=false")
 			.headers(headers_8)
 			.check(jsonPath("$..event_token").saveAs("eventToken"))
 			.check(status in (200,304)))
@@ -37,7 +36,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_050_CreateSolicitor")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate1")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate1")
 			.headers(headers_10)
 			.body(StringBody("""{
 					 |  "data": {
@@ -64,7 +63,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_070_CreateSolicitor2")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate2")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate2")
 			.headers(headers_18)
 			.body(StringBody("""{
 					 |  "data": {
@@ -116,7 +115,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_080_CreateSolicitor3")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate3")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate3")
 			.headers(headers_22)
 			.body(StringBody("""{
 					 |  "data": {
@@ -156,7 +155,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_090_CreateSolicitor4")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate4")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate4")
 			.headers(headers_26)
 			.body(StringBody("""{
 					 |  "data": {
@@ -216,7 +215,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_120_CreateSolicitor5")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate5")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate5")
 			.headers(headers_34)
 			.body(StringBody("""{
 					 |  "data": {
@@ -224,7 +223,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -283,7 +282,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -311,7 +310,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_130_CreateSolicitor6")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate6")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate6")
 			.headers(headers_37)
 			.body(StringBody("""{
 					 |  "data": {
@@ -355,7 +354,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -398,7 +397,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_150_CreateSolicitor8")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate8")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate8")
 			.headers(headers_44)
 			.body(StringBody("""{
 					 |  "data": {
@@ -444,7 +443,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -492,7 +491,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_170_CreateSolicitor9")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate9")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate9")
 			.headers(headers_51)
 			.body(StringBody("""{
 					 |  "data": {
@@ -539,7 +538,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -581,7 +580,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_180_CreateSolicitor11")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate11")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate11")
 			.headers(headers_55)
 			.body(StringBody("""{
 					 |  "data": {
@@ -623,7 +622,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -666,7 +665,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_190_CreateSolicitor12")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/validate?pageId=FR_solicitorCreate12")
+			.post("/data/case-types/FinancialRemedyMVP2/validate?pageId=FR_solicitorCreate12")
 			.headers(headers_59)
 			.body(StringBody("""{
 					 |  "data": {},
@@ -706,7 +705,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -755,7 +754,7 @@ object EXUI_FR_Applicant  {
 		.pause(minThinkTime, maxThinkTime)
 
 		.exec(http("XUI${service}_210_CreateCase6")
-			.post("/data/case-types/FinancialRemedyConsentedRespondent/cases?ignore-warning=false")
+			.post("/data/case-types/FinancialRemedyMVP2/cases?ignore-warning=false")
 			.headers(headers_64)
 			.body(StringBody("""{
 					 |  "data": {
@@ -812,7 +811,7 @@ object EXUI_FR_Applicant  {
 					 |    "appRespondentLName": "Parker",
 					 |    "appRespondentRep": "Yes",
 					 |    "rSolicitorName": "Adam Walker",
-					 |    "rOrgPolicy": {
+					 |    "RespondentOrganisationPolicy": {
 					 |      "Organisation": {
 					 |        "OrganisationID": "${respondent_orgref}",
 					 |        "OrganisationName": "${respondent_orgname}"
@@ -863,7 +862,7 @@ object EXUI_FR_Applicant  {
 					 |  "ignore_warning": false,
 					 |  "draft_id": null
 					 |}""".stripMargin))
-			.check(jsonPath("$..id").saveAs("caseId"))
+			//.check(jsonPath("$..id").saveAs("caseId"))
 			.check(status in (200,304)))
 		.pause(minThinkTime, maxThinkTime)
 
