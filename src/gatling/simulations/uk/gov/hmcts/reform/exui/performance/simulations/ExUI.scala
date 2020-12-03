@@ -38,20 +38,20 @@ class ExUI extends Simulation {
 	 {
 		exec(
 		//S2SHelper.S2SAuthToken,
-		ExUI.createSuperUser,
+		/*ExUI.createSuperUser,
 		ExUI.createOrg,
       ExUI.approveOrgHomePage,
 		ExUI.approveOrganisationlogin,
 			ExUI.approveOrganisationApprove,
-			ExUI.approveOrganisationLogout
-			/*ExUI.manageOrgHomePage,
+			ExUI.approveOrganisationLogout*/
+			ExUI.manageOrgHomePage,
 			ExUI.manageOrganisationLogin,
 			ExUI.usersPage,
 			ExUI.inviteUserPage
 			.repeat(5,"n") {
 				exec(ExUI.sendInvitation)
 				},
-			ExUI.manageOrganisationLogout*/
+			ExUI.manageOrganisationLogout
 			)
 	 }
 
@@ -88,7 +88,7 @@ class ExUI extends Simulation {
 	).protocols(FRhttpProtocol)
 
 	/*setUp(
-		EXUIScn.inject(rampUsers(1) during (10))
+		EXUIScn.inject(rampUsers(2) during (20))
 	).protocols(XUIHttpProtocol)*/
 
 	/*setUp(
