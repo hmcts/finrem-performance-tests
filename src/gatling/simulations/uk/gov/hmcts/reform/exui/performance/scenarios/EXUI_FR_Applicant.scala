@@ -862,7 +862,7 @@ object EXUI_FR_Applicant  {
 					 |  "ignore_warning": false,
 					 |  "draft_id": null
 					 |}""".stripMargin))
-			//.check(jsonPath("$..id").saveAs("caseId"))
+			.check(jsonPath("$..id").saveAs("caseId"))
 			.check(status in (200,304)))
 		.pause(minThinkTime, maxThinkTime)
 

@@ -153,8 +153,9 @@ object EXUIMCLogin {
     tryMax(2) {
 
       exec(http("XUI${service}_020_005_SignIn")
-           .post(IdamUrl + "/login?response_type=code&redirect_uri=https%3A%2F%2F"+orgDomain+"%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user%20manage-roles&state=${state}&client_id=xuimowebapp")
-           .formParam("username", "${respuser}")
+           //.post(IdamUrl + "/login?response_type=code&redirect_uri=https%3A%2F%2F"+orgDomain+"%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user%20manage-roles&state=${state}&client_id=xuimowebapp")
+        .post("https://idam-web-public.aat.platform.hmcts.net/login?response_type=code&redirect_uri=https%3A%2F%2Fmanage-org.aat.platform.hmcts.net%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user%20manage-roles&state=${state}&client_id=xuimowebapp")
+        .formParam("username", "${respuser}")
            .formParam("password", "Pass19word")
            .formParam("save", "Sign in")
            .formParam("selfRegistrationEnabled", "false")
