@@ -86,6 +86,7 @@ class ExUI extends Simulation {
 		EXUIMCaseCaseworkerScn.inject(rampUsers(1) during (10)),
 		EXUIFinancialRemedyScn.inject(rampUsers(1) during (10))
 	).protocols(FRhttpProtocol)
+	 .assertions(global.successfulRequests.percent.is(100))
 
 	/*setUp(
 		EXUIScn.inject(rampUsers(2) during (20))
