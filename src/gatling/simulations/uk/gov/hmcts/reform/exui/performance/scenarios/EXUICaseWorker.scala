@@ -65,8 +65,7 @@ object EXUICaseWorker {
           .pause(MinThinkTime, MaxThinkTime)
 
         //Simulate clicking on Case List
-      }
-
+      
     }
 }
 
