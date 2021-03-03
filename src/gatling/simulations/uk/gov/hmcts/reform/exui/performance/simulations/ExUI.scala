@@ -10,7 +10,7 @@ class ExUI extends Simulation {
 
 	val BaseURL = Environment.baseURL
 	val orgurl=Environment.manageOrdURL
-	val feedUserDataRJ = csv("RJUserData.csv").circular
+	val feedUserDataFR = csv("FRSolicitorData.csv").circular
 	val feedUserDataCaseworker = csv("Caseworkers.csv").circular
 
 	/*val httpProtocol = Environment.HttpProtocol
@@ -37,21 +37,21 @@ class ExUI extends Simulation {
 	val EXUIScn = scenario("EXUI").repeat(1)
 	 {
 		exec(
-		//S2SHelper.S2SAuthToken,
-		/*ExUI.createSuperUser,
+		S2SHelper.S2SAuthToken,
+		ExUI.createSuperUser,
 		ExUI.createOrg,
       ExUI.approveOrgHomePage,
 		ExUI.approveOrganisationlogin,
 			ExUI.approveOrganisationApprove,
-			ExUI.approveOrganisationLogout*/
-			ExUI.manageOrgHomePage,
+			ExUI.approveOrganisationLogout
+			/*ExUI.manageOrgHomePage,
 			ExUI.manageOrganisationLogin,
 			ExUI.usersPage,
 			ExUI.inviteUserPage
-			.repeat(5,"n") {
+			.repeat(1,"n") {
 				exec(ExUI.sendInvitation)
 				},
-			ExUI.manageOrganisationLogout
+			ExUI.manageOrganisationLogout*/
 			)
 	 }
 
@@ -68,28 +68,29 @@ class ExUI extends Simulation {
   }
 
 	val EXUIFinancialRemedyScn = scenario("Scenario FR").repeat(1)
-	{	 feed(feedUserDataRJ)
+	{	 feed(feedUserDataFR)
 		.feed(Feeders.FRApplicantDataFeeder)
 		.exec(EXUIMCLogin.manageCasesHomePage)
 		.exec(EXUIMCLogin.manageCaseslogin)
 		.exec(EXUI_FR_Applicant.createCase)
 		.exec(EXUIMCLogin.manageCase_Logout)
-		
+
 		.feed(Feeders.FRRespondentDataFeeder)
 		.exec(EXUIMCLogin.manageOrgHomePage)
 		.exec(EXUIMCLogin.manageOrglogin)
+		.exec(EXUIMCLogin.termsnconditions)
 		.exec(EXUI_FR_Respondent.shareCase)
 		.exec(EXUIMCLogin.manageOrg_Logout)
 	}
 
 	setUp(
-		EXUIMCaseCaseworkerScn.inject(rampUsers(1) during (10)),
-		EXUIFinancialRemedyScn.inject(rampUsers(1) during (10))
+		//EXUIMCaseCaseworkerScn.inject(rampUsers(1) during (10)),
+		EXUIFinancialRemedyScn.inject(rampUsers(10) during (300))
 	).protocols(FRhttpProtocol)
 	 .assertions(global.successfulRequests.percent.is(100))
 
 	/*setUp(
-		EXUIScn.inject(rampUsers(2) during (20))
+		EXUIScn.inject(rampUsers(5) during (100))
 	).protocols(XUIHttpProtocol)*/
 
 	/*setUp(

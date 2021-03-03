@@ -14,7 +14,7 @@ object FR_Applicant_Header {
     "sec-ch-ua" -> """Chromium";v="86", "\"Not\\A;Brand";v="99", "Google Chrome";v="86""",
     "sec-ch-ua-mobile" -> "?0",
     "x-dtpc" -> "3$259808026_422h5vQEGKFHUHMIDPKBQASVVNRMPKURVRUITM-0e16",
-    "x-dtreferer" -> s"${baseURL}/cases")
+    "x-dtreferer" -> ({baseURL+"/cases"}))
 
   val headers_6 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.ui-start-case-trigger.v2+json;charset=UTF-8",
@@ -51,7 +51,9 @@ object FR_Applicant_Header {
     "sec-ch-ua" -> """Chromium";v="86", "\"Not\\A;Brand";v="99", "Google Chrome";v="86""",
     "sec-ch-ua-mobile" -> "?0",
     "x-dtpc" -> "3$259808026_422h11vQEGKFHUHMIDPKBQASVVNRMPKURVRUITM-0e17",
-    "x-dtreferer" -> s"${baseURL}/cases/case-filter")
+    "x-dtreferer" -> ({baseURL+"/cases/case-filter"}))
+
+
 
   val headers_10 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8",
@@ -76,6 +78,18 @@ object FR_Applicant_Header {
     "sec-ch-ua" -> """Chromium";v="86", "\"Not\\A;Brand";v="99", "Google Chrome";v="86""",
     "sec-ch-ua-mobile" -> "?0",
     "x-dtpc" -> "3$259808026_422h15vQEGKFHUHMIDPKBQASVVNRMPKURVRUITM-0e19")
+
+  val headers_16 = Map(
+    "accept" -> "application/json, text/plain, */*",
+    "accept-encoding" -> "gzip, deflate, br",
+    "accept-language" -> "en-GB,en-US;q=0.9,en;q=0.8",
+    "sec-ch-ua" -> """Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99""",
+    "sec-ch-ua-mobile" -> "?0",
+    "sec-fetch-dest" -> "empty",
+    "sec-fetch-mode" -> "cors",
+    "sec-fetch-site" -> "same-origin",
+    "x-dtpc" -> "3$8007605_643h28vKAFBLMAHHPFRAPCUBQFASMJJMWPLKDOW-0e7",
+    "x-dtreferer" -> {baseURL + "/cases/case-create/DIVORCE/FinancialRemedyMVP2/FR_solicitorCreate/FR_solicitorCreate1"})
 
   val headers_18 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8",
@@ -237,6 +251,18 @@ object FR_Applicant_Header {
     "sec-ch-ua-mobile" -> "?0",
     "x-dtpc" -> "3$259808026_422h40vQEGKFHUHMIDPKBQASVVNRMPKURVRUITM-0e31")
 
+  val headers_60 = Map(
+    "accept" -> "application/json, text/plain, */*",
+    "accept-encoding" -> "gzip, deflate, br",
+    "accept-language" -> "en-GB,en-US;q=0.9,en;q=0.8",
+    "sec-ch-ua" -> """Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99""",
+    "sec-ch-ua-mobile" -> "?0",
+    "sec-fetch-dest" -> "empty",
+    "sec-fetch-mode" -> "cors",
+    "sec-fetch-site" -> "same-origin",
+    "x-dtpc" -> "3$8007605_643h42vKAFBLMAHHPFRAPCUBQFASMJJMWPLKDOW-0e11",
+    "x-dtreferer" -> {baseURL + "/cases/case-create/DIVORCE/FinancialRemedyMVP2/FR_solicitorCreate/FR_solicitorCreate4"})
+
   val headers_61 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.ui-user-profile.v2+json;charset=UTF-8",
     "Content-Type" -> "application/json",
@@ -255,7 +281,7 @@ object FR_Applicant_Header {
   val headers_64 = Map(
     "Accept" -> "application/vnd.uk.gov.hmcts.ccd-data-store-api.create-case.v2+json;charset=UTF-8",
     "Content-Type" -> "application/json",
-    "Origin" -> s"${baseURL}",
+    "Origin" -> baseURL,
     "Sec-Fetch-Dest" -> "empty",
     "Sec-Fetch-Mode" -> "cors",
     "Sec-Fetch-Site" -> "same-origin",

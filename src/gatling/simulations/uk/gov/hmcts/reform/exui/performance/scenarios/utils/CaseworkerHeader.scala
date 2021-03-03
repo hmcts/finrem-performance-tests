@@ -16,13 +16,18 @@ val headers_0 = Map(
 
 val headers_2 = Map(
     "accept" -> "application/json",
+    "accept-encoding" -> "gzip, deflate, br",
+    "accept-language" -> "en-GB,en-US;q=0.9,en;q=0.8",
     "content-type" -> "application/json",
-    "origin" -> baseURL,
+    "origin" -> "https://manage-case.aat.platform.hmcts.net",
+    "sec-ch-ua" -> """Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99""",
+    "sec-ch-ua-mobile" -> "?0",
     "sec-fetch-dest" -> "empty",
     "sec-fetch-mode" -> "cors",
     "sec-fetch-site" -> "same-origin",
-    "x-dtpc" -> "2$595308963_803h9vGPUVHCQAOWPMASHWHNFGLKUMKEKFNFBO-0e6"
-    )
+    "x-dtpc" -> "3$86414219_500h17vQCAUNKDPAQEHAVVUOSPMUPTQGGLFGMFD-0e16",
+    "x-dtreferer" -> "https://manage-case.aat.platform.hmcts.net/",
+    "x-xsrf-token" -> "${xsrfToken2}")
 
 val headers_4 = Map(
     "Pragma" -> "no-cache",

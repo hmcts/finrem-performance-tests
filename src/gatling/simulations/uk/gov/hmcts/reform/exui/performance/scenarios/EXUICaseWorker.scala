@@ -16,8 +16,8 @@ object EXUICaseWorker {
   val ApplyFilters =
     feed(caseFeeder)
       .exec(http("XUI${service}_030_ApplyFilter")
-        .post("/data/internal/searchCases?ctid=${caseType}&use_case=SEARCH&view=SEARCH&page=1").headers(CaseworkerHeader.headers_2)
-        .header("X-XSRF-TOKEN", "${xsrfToken}")
+        .post("/data/internal/searchCases?ctid=FinancialRemedyMVP2&use_case=WORKBASKET&view=WORKBASKET&page=1").headers(CaseworkerHeader.headers_2)
+        //.header("X-XSRF-TOKEN", "${xsrfToken}")
         .body(StringBody("{\n  \"size\": 25\n}"))
         .check(jsonPath("$..case_id").find(0).optional.saveAs("caseNumber")))
       .pause(MinThinkTime, MaxThinkTime)
