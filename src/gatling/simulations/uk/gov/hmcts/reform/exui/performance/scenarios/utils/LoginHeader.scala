@@ -31,7 +31,7 @@ object LoginHeader {
 
  val headers_tc = Map(
   "Content-Type" -> "application/json",
-  "Origin" -> "https://manage-case.perftest.platform.hmcts.net",
+  "Origin" -> baseURL,
   "Sec-Fetch-Dest" -> "empty",
   "Sec-Fetch-Mode" -> "cors",
   "Sec-Fetch-Site" -> "same-origin")
@@ -80,7 +80,7 @@ object LoginHeader {
   "accept-encoding" -> "gzip, deflate, br",
   "accept-language" -> "en-GB,en-US;q=0.9,en;q=0.8",
   "cache-control" -> "max-age=0",
-  "origin" -> "https://idam-web-public.aat.platform.hmcts.net",
+  "origin" -> IdamUrl,
   "sec-ch-ua" -> """Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99""",
   "sec-ch-ua-mobile" -> "?0",
   "sec-fetch-dest" -> "document",
@@ -141,7 +141,7 @@ object LoginHeader {
   "sec-fetch-mode" -> "cors",
   "sec-fetch-site" -> "same-origin",
   "x-dtpc" -> "3$86414219_500h14vQCAUNKDPAQEHAVVUOSPMUPTQGGLFGMFD-0e16",
-  "x-dtreferer" -> "https://manage-case.aat.platform.hmcts.net/",
+  "x-dtreferer" -> {baseURL + "/"},
   "x-xsrf-token" -> "${xsrfToken1}")
 
  val headers_17 = Map(
@@ -164,7 +164,7 @@ object LoginHeader {
   "sec-fetch-mode" -> "cors",
   "sec-fetch-site" -> "same-origin",
   "x-dtpc" -> "3$86414219_500h16vQCAUNKDPAQEHAVVUOSPMUPTQGGLFGMFD-0e16",
-  "x-dtreferer" -> "https://manage-case.aat.platform.hmcts.net/",
+  "x-dtreferer" -> {baseURL + "/"},
   "x-xsrf-token" -> "${xsrfToken2}")
 
  val headers_manageorglogin = Map(

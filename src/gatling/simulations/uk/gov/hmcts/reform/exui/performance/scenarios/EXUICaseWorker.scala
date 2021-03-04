@@ -16,8 +16,7 @@ object EXUICaseWorker {
   val ApplyFilters =
     feed(caseFeeder)
       .exec(http("XUI${service}_030_ApplyFilter")
-        .post("/data/internal/searchCases?ctid=FinancialRemedyMVP2&use_case=WORKBASKET&view=WORKBASKET&page=1").headers(CaseworkerHeader.headers_2)
-        //.header("X-XSRF-TOKEN", "${xsrfToken}")
+        .post("/data/internal/searchCases?ctid=${caseType}&use_case=WORKBASKET&view=WORKBASKET&page=1").headers(CaseworkerHeader.headers_2)
         .body(StringBody("{\n  \"size\": 25\n}"))
         .check(jsonPath("$..case_id").find(0).optional.saveAs("caseNumber")))
       .pause(MinThinkTime, MaxThinkTime)
@@ -26,7 +25,6 @@ object EXUICaseWorker {
       exec(http("XUI${service}_040_005_ViewCase")
         .get("/data/internal/cases/${caseNumber}")
         .headers(CaseworkerHeader.headers_5)
-        .header("X-XSRF-TOKEN", "${xsrfToken}")
         .check(regex("""internal/documents/(.+?)","document_filename""")
           .find(0).optional.saveAs("Document_ID")))
 
@@ -43,24 +41,20 @@ object EXUICaseWorker {
       .doIf(session => session.contains("Document_ID")) {
         exec(http("XUI${service}_050_005_ViewCaseDocumentUI")
           .get("/external/config/ui")
-          .headers(CaseworkerHeader.headers_documents)
-          .header("X-XSRF-TOKEN", "${xsrfToken}"))
+          .headers(CaseworkerHeader.headers_documents))
 
           .exec(http("XUI${service}_050_010_ViewCaseDocumentT&C")
             .get("/api/configuration?configurationKey=termsAndConditionsEnabled")
-            .headers(CaseworkerHeader.headers_documents)
-            .header("X-XSRF-TOKEN", "${xsrfToken}"))
+            .headers(CaseworkerHeader.headers_documents))
 
           .exec(http("XUI${service}_050_015_ViewCaseDocumentAnnotations")
             .get("/em-anno/annotation-sets/filter?documentId=${Document_ID}")
             .headers(CaseworkerHeader.headers_documents)
-            .header("X-XSRF-TOKEN", "${xsrfToken}")
             .check(status.in(200, 404, 304,502)))
 
           .exec(http("XUI${service}_050_020_ViewCaseDocumentBinary")
             .get("/documents/${Document_ID}/binary")
             .headers(CaseworkerHeader.headers_documents)
-            .header("X-XSRF-TOKEN", "${xsrfToken}")
             .check(status.in(200, 404, 304)))
           .pause(MinThinkTime, MaxThinkTime)
 

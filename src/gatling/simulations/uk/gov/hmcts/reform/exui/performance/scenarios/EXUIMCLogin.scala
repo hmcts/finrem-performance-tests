@@ -151,7 +151,7 @@ object EXUIMCLogin {
   val manageCaseslogin =
     group("XUI${service}_020_005_SignIn") {
       exec(flushHttpCache).exec(http("XUI${service}_020_005_SignIn")
-        .post(IdamUrl + "/login?response_type=code&redirect_uri=" + baseURL + "%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user&state=${state}&client_id=xuiwebapp")
+        .post(IdamUrl + "/login?response_type=code&redirect_uri=https%3A%2F%2F" + baseDomain + "%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user&state=${state}&client_id=xuiwebapp")
         //.post(IdamUrl + "/login?client_id=xuiwebapp&redirect_uri=" + baseURL + "/oauth2/callback&state=${state}&nonce=${nonce}&response_type=code&scope=profile%20openid%20roles%20manage-user%20create-user&prompt=")
         .formParam("username", "${user}")
         .formParam("password", "Pass19word")
@@ -219,10 +219,10 @@ object EXUIMCLogin {
   val caseworkerLogin =
     group("XUI${service}_020_SignIn") {
       exec(http("XUI${service}_020_005_SignIn")
-        .post(IdamUrl + "/login?response_type=code&redirect_uri=" + baseURL + "%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user&state=${state}&client_id=xuiwebapp")
+        .post(IdamUrl + "/login?response_type=code&redirect_uri=https%3A%2F%2F" + baseDomain + "%2Foauth2%2Fcallback&scope=profile%20openid%20roles%20manage-user%20create-user&state=${state}&client_id=xuiwebapp")
         //.post(IdamUrl + "/login?client_id=xuiwebapp&redirect_uri=" + baseURL + "/oauth2/callback&state=${state}&nonce=${nonce}&response_type=code&scope=profile%20openid%20roles%20manage-user%20create-user&prompt=")
         .formParam("username", "${user}")
-        .formParam("password", "Password12")
+        .formParam("password", "Pass19word")
         .formParam("save", "Sign in")
         .formParam("selfRegistrationEnabled", "false")
         .formParam("_csrf", "${csrfToken}")
