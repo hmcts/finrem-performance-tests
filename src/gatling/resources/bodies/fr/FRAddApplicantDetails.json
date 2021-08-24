@@ -1,0 +1,52 @@
+{
+  "data": {
+    "applicantFMName": "ApplicantPerf",
+    "applicantLName": "ApplicantTest",
+    "regionList": "midlands",
+    "midlandsFRCList": "nottingham",
+    "nottinghamCourtList": "FR_nottinghamList_1"
+  },
+  "event": {
+    "id": "FR_solicitorCreate",
+    "summary": "",
+    "description": ""
+  },
+  "event_data": {
+    "isAdmin": "No",
+    "solicitorName": "${firmName}",
+    "ApplicantOrganisationPolicy": {
+      "OrgPolicyCaseAssignedRole": "[APPSOLICITOR]",
+      "OrgPolicyReference": null,
+      "PrepopulateToUsersOrganisation": null,
+      "Organisation": {
+        "OrganisationID": "${orgs(1)}",
+        "OrganisationName": "${orgs(0)}"
+      },
+      "PreviousOrganisations": []
+    },
+    "solicitorFirm": "${firmName}",
+    "solicitorReference": "${firmRef}",
+    "solicitorAddress": {
+      "AddressLine1": "${firmAddress1}",
+      "AddressLine2": "${firmAddress2}",
+      "AddressLine3": "",
+      "PostTown": "${firmPostTown}",
+      "County": "${firmCounty}",
+      "PostCode": "${firmPostcode}",
+      "Country": "UK"
+    },
+    "solicitorPhone": null,
+    "solicitorEmail": "${firmName}@test.com",
+    "solicitorDXnumber": null,
+    "solicitorAgreeToReceiveEmails": "No",
+    "divorceCaseNumber": "EZ12D91234",
+    "divorceStageReached": "Petition Issued",
+    "applicantFMName": "ApplicantPerf",
+    "applicantLName": "ApplicantTest",
+    "regionList": "midlands",
+    "midlandsFRCList": "nottingham",
+    "nottinghamCourtList": "FR_nottinghamList_1"
+  },
+  "event_token": "${event_token}",
+  "ignore_warning": false
+}
