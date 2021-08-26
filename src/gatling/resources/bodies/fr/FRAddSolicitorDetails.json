@@ -6,10 +6,9 @@
       "OrgPolicyReference": null,
       "PrepopulateToUsersOrganisation": null,
       "Organisation": {
-        "OrganisationID": "${orgs(1)}",
-        "OrganisationName": "${orgs(0)}"
-      },
-      "PreviousOrganisations": []
+        "OrganisationID": "${applicantOrgs(1)}",
+        "OrganisationName": "${applicantOrgs(0)}"
+      }
     },
     "solicitorFirm": "${firmName}",
     "solicitorReference": "${firmRef}",
@@ -40,10 +39,9 @@
       "OrgPolicyReference": null,
       "PrepopulateToUsersOrganisation": null,
       "Organisation": {
-        "OrganisationID": "${orgs(1)}",
-        "OrganisationName": "${orgs(0)}"
-      },
-      "PreviousOrganisations": []
+        "OrganisationID": "${applicantOrgs(1)}",
+        "OrganisationName": "${applicantOrgs(0)}"
+      }
     },
     "solicitorFirm": "${firmName}",
     "solicitorReference": "${firmRef}",

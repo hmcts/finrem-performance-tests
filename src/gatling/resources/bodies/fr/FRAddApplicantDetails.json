@@ -2,9 +2,9 @@
   "data": {
     "applicantFMName": "ApplicantPerf",
     "applicantLName": "ApplicantTest",
-    "regionList": "midlands",
-    "midlandsFRCList": "nottingham",
-    "nottinghamCourtList": "FR_nottinghamList_1"
+    "regionList": "london",
+    "londonFRCList": "london",
+    "londonCourtList": "FR_londonList_10"
   },
   "event": {
     "id": "FR_solicitorCreate",
@@ -19,10 +19,9 @@
       "OrgPolicyReference": null,
       "PrepopulateToUsersOrganisation": null,
       "Organisation": {
-        "OrganisationID": "${orgs(1)}",
-        "OrganisationName": "${orgs(0)}"
-      },
-      "PreviousOrganisations": []
+        "OrganisationID": "${applicantOrgs(1)}",
+        "OrganisationName": "${applicantOrgs(0)}"
+      }
     },
     "solicitorFirm": "${firmName}",
     "solicitorReference": "${firmRef}",
@@ -43,9 +42,9 @@
     "divorceStageReached": "Petition Issued",
     "applicantFMName": "ApplicantPerf",
     "applicantLName": "ApplicantTest",
-    "regionList": "midlands",
-    "midlandsFRCList": "nottingham",
-    "nottinghamCourtList": "FR_nottinghamList_1"
+    "regionList": "london",
+    "londonFRCList": "london",
+    "londonCourtList": "FR_londonList_10"
   },
   "event_token": "${event_token}",
   "ignore_warning": false
