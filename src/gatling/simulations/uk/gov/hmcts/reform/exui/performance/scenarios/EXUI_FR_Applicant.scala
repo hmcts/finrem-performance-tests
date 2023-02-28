@@ -69,7 +69,6 @@ object EXUI_FR_Applicant  {
 					.check(jsonPath("$.data.solicitorReference").saveAs("firmRef"))
 					.check(jsonPath("$.data.solicitorAddress.AddressLine1").saveAs("firmAddress1"))
 					.check(jsonPath("$.data.solicitorAddress.AddressLine2").saveAs("firmAddress2"))
-					.check(jsonPath("$.data.solicitorAddress.AddressLine3").saveAs("firmAddress3"))
 					.check(jsonPath("$.data.solicitorAddress.PostTown").saveAs("firmPostTown"))
 					.check(jsonPath("$.data.solicitorAddress.County").saveAs("firmCounty"))
 					.check(jsonPath("$.data.solicitorAddress.PostCode").saveAs("firmPostcode")))
